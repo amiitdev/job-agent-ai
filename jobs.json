@@ -1,0 +1,34 @@
+{
+  "top_jobs": [
+    {
+      "title": "Intermediate Full Stack Engineer",
+      "score": 10,
+      "reason": "Matches the mid-level requirement perfectly and aligns with full-stack preferences including modern backend development.",
+      "link": "https://remoteOK.com/remote-jobs/remote-intermediate-full-stack-engineer-runn-1130979"
+    },
+    {
+      "title": "Security Engineer II Canada",
+      "score": 8,
+      "reason": "Explicitly a Mid-level role (Level II) focused on backend security engineering and technical architecture.",
+      "link": "https://remoteOK.com/remote-jobs/remote-security-engineer-ii-canada-nerdwallet-1130860"
+    },
+    {
+      "title": "Developer Advocate",
+      "score": 7,
+      "reason": "A technical role that involves software development and backend API work, suitable for mid-level talent.",
+      "link": "https://remoteOK.com/remote-jobs/remote-developer-advocate-shotstack-1130818"
+    },
+    {
+      "title": "WordPress Developer",
+      "score": 6,
+      "reason": "A core development position suitable for mid-level candidates, although the stack is PHP-based rather than Node.js.",
+      "link": "https://remoteOK.com/remote-jobs/remote-wordpress-developer-data-group-1130946"
+    },
+    {
+      "title": "Site Reliability Engineer US West",
+      "score": 5,
+      "reason": "A technical backend-focused role dealing with infrastructure and reliability, fitting the mid-level engineer profile.",
+      "link": "https://remoteOK.com/remote-jobs/remote-site-reliability-engineer-us-west-minio-1130893"
+    }
+  ]
+}
