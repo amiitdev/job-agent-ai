@@ -1,0 +1,5 @@
+# Add to .gitignore
+echo ".env" >> .gitignore
+echo ".env.*" >> .gitignore
+echo "*.env" >> .gitignore
+echo "secrets.txt" >> .gitignore
