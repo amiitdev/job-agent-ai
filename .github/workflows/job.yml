@@ -2,7 +2,7 @@ name: Job Fetcher
 
 on:
   schedule:
-    - cron: '0 * * * *' # 🔥 every hour
+    - cron: "0 * * * *"   # 🔥 every hour
   workflow_dispatch:
 
 jobs:
@@ -16,7 +16,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: "3.10"
 
       - name: Install dependencies
         run: |
