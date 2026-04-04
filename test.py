@@ -242,4 +242,4 @@ if __name__ == "__main__":
 
     print_ui(final_jobs)
 
-    send_telegram(final_jobs)
+    send_telegram(final_jobss)
