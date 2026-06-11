@@ -117,16 +117,15 @@ def ai_rank_jobs(jobs):
     # Send compact job info (no descriptions) to save tokens
     compact = [{"id": j["id"], "title": j["title"], "company": j["company"], "source": j["source"]} for j in jobs[:AI_JOB_LIMIT]]
 
-    prompt = """You are a junior developer job recommender.
+    prompt = """You are a job recommender. Pick the top 5 jobs most suitable for a junior developer.
 
 Rules:
-- Prefer React, Node, Backend, Full Stack, MERN stack jobs
+- Prefer software dev, engineering, coding, IT roles
 - Prefer fresher / <=2 years experience
 - Penalize senior, director, VP, chief, lead roles
+- If no dev roles exist, just pick the 5 best entry-level remote jobs
 - Score strictly between 1-10
-
-Return JSON: {"top_jobs": [{"id": int, "score": int, "reason": "why it fits"}]}
-Pick the top 5 most suitable jobs only.
+- Return JSON: {"top_jobs": [{"id": int, "score": int, "reason": "why"}]}
 """
 
     r = requests.post(
@@ -164,6 +163,17 @@ def map_results(ai_result, jobs):
                 "source": j["source"],
                 "score": item["score"],
                 "reason": item["reason"],
+            })
+    if not final and jobs:
+        fallback = sorted(jobs, key=lambda x: 0 if any(k in (x.get("title","")+x.get("company","")).lower() for k in ["dev","engineer","developer","software","intern","junior","frontend","backend","full stack","react","python","java","node","data"]) else 1)[:10]
+        for j in fallback:
+            final.append({
+                "title": j["title"],
+                "company": j["company"],
+                "link": j["link"],
+                "source": j["source"],
+                "score": 5,
+                "reason": "Fallback — AI found no perfect match, try applying",
             })
     return final
 
