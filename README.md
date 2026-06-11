@@ -52,7 +52,7 @@ This project automatically:
 
 * 🐍 Python
 * 🌐 requests + BeautifulSoup (web scraping + API)
-* 🤖 Google Gemini AI (`google-genai`)
+* 🤖 OpenRouter AI (`gpt-4o-mini` via API)
 * 📦 Pydantic (schema validation)
 * ☁️ GitHub Actions (scheduler)
 * 📩 Telegram Bot API
@@ -73,7 +73,7 @@ cd job-agent-ai
 ## 2️⃣ Install Dependencies
 
 ```
-          pip install requests beautifulsoup4 python-dotenv google-genai pydantic
+          pip install requests python-dotenv
 ```
 
 ---
@@ -81,7 +81,7 @@ cd job-agent-ai
 ## 3️⃣ Create `.env`
 
 ```
-GEMINI_API_KEY=your_api_key
+OPENROUTER_API_KEY=your_api_key
 TELEGRAM_BOT_TOKEN=your_bot_token
 TELEGRAM_CHAT_ID=your_chat_id
 ```
@@ -126,11 +126,11 @@ jobs:
           python-version: "3.10"
 
       - run: |
-pip install requests beautifulsoup4 python-dotenv google-genai pydantic
+pip install requests python-dotenv
 
       - run: python job_fetcher.py
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
 ```
@@ -147,7 +147,7 @@ Settings → Secrets and variables → Actions
 
 Add:
 
-* `GEMINI_API_KEY`
+* `OPENROUTER_API_KEY`
 * `TELEGRAM_BOT_TOKEN`
 * `TELEGRAM_CHAT_ID`
 

@@ -2,4 +2,5 @@
 echo ".env" >> .gitignore
 echo ".env.*" >> .gitignore
 echo "*.env" >> .gitignore
-echo "secrets.txt" >> .gitignore
+echo "secrets.txt" >> .gitignore.env
+venv/
