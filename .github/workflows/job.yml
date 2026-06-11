@@ -20,7 +20,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install requests feedparser beautifulsoup4 python-dotenv google-genai pydantic
+          pip install requests beautifulsoup4 python-dotenv google-genai pydantic
 
       - name: Run script
         run: python job_fetcher.py

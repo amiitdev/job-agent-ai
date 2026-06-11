@@ -10,7 +10,7 @@
 
 This project automatically:
 
-* 🌐 Fetches latest remote jobs from RSS feeds
+* 🌐 Fetches latest remote jobs via web scraping + API (RemoteOK, WeWorkRemotely, Remotive)
 * 🧹 Filters only relevant roles (React / Node / Backend)
 * 🚫 Removes senior & irrelevant jobs
 * 🤖 Uses AI (Gemini) to rank best jobs
@@ -26,7 +26,7 @@ This project automatically:
                   ↓
           Python Script 🐍
                   ↓
-        Job Scraper (RSS + HTML) 🌐
+        Job Scraper (Web Scrape + API) 🌐
                   ↓
         Smart Filter Logic 🎯
                   ↓
@@ -51,7 +51,7 @@ This project automatically:
 # 🛠 Tech Stack
 
 * 🐍 Python
-* 🌐 feedparser + requests + BeautifulSoup
+* 🌐 requests + BeautifulSoup (web scraping + API)
 * 🤖 Google Gemini AI (`google-genai`)
 * 📦 Pydantic (schema validation)
 * ☁️ GitHub Actions (scheduler)
@@ -73,7 +73,7 @@ cd job-agent-ai
 ## 2️⃣ Install Dependencies
 
 ```
-pip install requests feedparser beautifulsoup4 python-dotenv google-genai pydantic
+          pip install requests beautifulsoup4 python-dotenv google-genai pydantic
 ```
 
 ---
@@ -126,7 +126,7 @@ jobs:
           python-version: "3.10"
 
       - run: |
-          pip install requests feedparser beautifulsoup4 python-dotenv google-genai pydantic
+pip install requests beautifulsoup4 python-dotenv google-genai pydantic
 
       - run: python job_fetcher.py
         env:
@@ -205,7 +205,7 @@ https://api.telegram.org/bot<TOKEN>/getUpdates
 
 * 📊 React Dashboard UI
 * 🗄 Store jobs in database
-* 🔍 Multi-source scraping (LinkedIn, Indeed)
+* 🔍 LinkedIn, Indeed direct scraping
 * 🤖 Auto-apply to jobs
 * 🧠 Resume matching AI
 
